@@ -1,0 +1,2 @@
+# ignore le node_modules pour les push
+node_modules
