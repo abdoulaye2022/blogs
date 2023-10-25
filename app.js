@@ -1,5 +1,6 @@
 const express = require('express');
-const { engine } = require('express-handlebars')
+const { engine } = require('express-handlebars');
+const fortune = require('./lib/fortune');
 
 const app = express();
 
@@ -21,8 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/service', (req, res) => {
-    const fortunes = 2023
-    res.render('service', { fortunes: fortunes });
+    res.render('service', { fortunes: fortune.getFortune() });
 });
 
 app.use((req, res) => {
